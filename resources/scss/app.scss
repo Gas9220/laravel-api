@@ -1,0 +1,34 @@
+@import '~bootstrap/scss/bootstrap';
+
+.circle-btn {
+    border: none;
+    color: white;
+    border-radius: 50%;
+    height: 1.875rem;
+    width: 1.875rem;
+}
+
+.delete-btn {
+    background-color: red;
+}
+
+.edit-btn {
+    background-color:dodgerblue;
+}
+
+.project-image {
+    width: 18.75rem;
+}
+
+.custom-badge {
+    cursor: pointer;
+    user-select: none;
+}
+
+.badge-not-selected {
+    background-color: gray;
+}
+
+.badge-selected {
+    background-color:darkblue;
+}
