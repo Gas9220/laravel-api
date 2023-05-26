@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use Brick\Math\BigInteger;
 
 class ProjectController extends Controller
 {
@@ -17,9 +18,9 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show(string $slug)
+    public function show($id)
     {
-        $projects = Project::where('slug', $slug)->with('type', 'technologies')->first();
+        $projects = Project::where('id', $id)->with('type', 'technologies')->first();
 
 
         if ($projects) {
