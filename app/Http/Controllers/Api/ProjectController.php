@@ -17,20 +17,21 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        $project = Project::find($id)->with('type', 'technologies');
+        // dd($id);
 
-
+        $project = Project::with('type', 'technologies')->find($id);
+        // dd($project);
         if ($project) {
             return response()->json([
                 'success' => true,
-                'results' => $project
+                'result' => $project
             ]);
         } else {
             return response()->json([
                 'success' => false,
-                'results' => null
+                'result' => null
             ], 404);
         }
     }

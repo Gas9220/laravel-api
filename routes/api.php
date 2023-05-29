@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('projects/{elements_per_page}', [ProjectController::class, 'index']);
-Route::get('projects/{id}', [ProjectController::class, 'show']);
+Route::get('projects/{id}/show', [ProjectController::class, 'show']);
