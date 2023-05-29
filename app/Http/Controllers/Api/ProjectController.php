@@ -4,13 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
-use Brick\Math\BigInteger;
 
 class ProjectController extends Controller
 {
-    public function index()
+    public function index($number_of_elements)
     {
-        $projects = Project::with('type', 'technologies')->get();
+        $projects = Project::with('type', 'technologies')->paginate($number_of_elements);
 
         return response()->json([
             'success' => true,
@@ -18,7 +17,7 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show($id)
+    public function show(int $id)
     {
         $projects = Project::where('id', $id)->with('type', 'technologies')->first();
 
