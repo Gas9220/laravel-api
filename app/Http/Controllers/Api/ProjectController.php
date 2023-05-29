@@ -17,15 +17,15 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show(int $id)
+    public function show($id)
     {
-        $projects = Project::where('id', $id)->with('type', 'technologies')->first();
+        $project = Project::find($id)->with('type', 'technologies');
 
 
-        if ($projects) {
+        if ($project) {
             return response()->json([
                 'success' => true,
-                'results' => $projects
+                'results' => $project
             ]);
         } else {
             return response()->json([
