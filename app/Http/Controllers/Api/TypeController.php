@@ -9,7 +9,7 @@ class TypeController extends Controller
 {
     public function index()
     {
-        $types = Type::all();
+        $types = Type::with('projects')->get();
 
         return response()->json([
             'success' => true,
