@@ -13,16 +13,16 @@ class NewMessage extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $message;
+    public $new_message;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($_message)
+    public function __construct($_new_message)
     {
-        $this->message = $_message;
+        $this->new_message = $_new_message;
     }
 
     /**
@@ -46,7 +46,7 @@ class NewMessage extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.new-message',
         );
     }
 
