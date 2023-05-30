@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TechnologyController;
 use App\Http\Controllers\Api\TypeController;
@@ -29,3 +30,4 @@ Route::get('types/{slug}', [TypeController::class, 'show']);
 Route::get('technologies', [TechnologyController::class, 'index']);
 Route::get('technologies/{slug}', [TechnologyController::class, 'show']);
 
+Route::post('messages', [MessageController::class, 'store']);
